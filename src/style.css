@@ -42,11 +42,12 @@ body {
         text-decoration: none; /* 去掉原有的下划线 */
         border-bottom: 2px solid #007BFF; /* 添加下划线，可以调整粗细 */
     }
-    a:hover {
-        color: #0056b3; /* 鼠标悬停时的颜色 */
-        text-decoration: none; /* 鼠标悬停时不显示下划线 */
-        border-bottom: 2px solid #0056b3; /* 鼠标悬停时的下划线颜色 */
+    /*a:hover {
+        color: #0056b3; /* 鼠标悬停时的颜色 
+        text-decoration: none; /* 鼠标悬停时不显示下划线 
+        border-bottom: 2px solid #0056b3; /* 鼠标悬停时的下划线颜色 
     }
+    */
     a:active {
         color: #28a745; /* 鼠标点击时的颜色 */
         border-bottom: 2px solid #28a745; /* 鼠标点击时的下划线颜色 */
