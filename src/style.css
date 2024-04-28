@@ -36,29 +36,27 @@ body {
     border-radius: 50%;
     margin-block: 0;
 }
-.info-div {
-    a {
-        color: #218dff; /* 链接颜色 */
-        text-decoration: none; /* 去掉原有的下划线 */
-        border-bottom: 2px solid #007BFF; /* 添加下划线，可以调整粗细 */
-    }
-    /*a:hover {
-        color: #0056b3; /* 鼠标悬停时的颜色 
-        text-decoration: none; /* 鼠标悬停时不显示下划线 
-        border-bottom: 2px solid #0056b3; /* 鼠标悬停时的下划线颜色 
-    }
-    */
-    a:active {
-        color: #28a745; /* 鼠标点击时的颜色 */
-        border-bottom: 2px solid #28a745; /* 鼠标点击时的下划线颜色 */
-    }
-    ul li {
-        margin-top: 0.8em; /* 调整这个值来改变空行的大小 */
-    }
-    ul{
-        padding-left: 1em; /* 调整这个值来改变列表项的缩进 */
-    }
+.info-div a{
+    color: #218dff;
+    text-decoration: none; /* 去掉原有的下划线 */
+    border-bottom: 2px solid #007BFF; /* 添加下划线，可以调整粗细 */
 }
+.info-div a:hover {
+    color: #0056b3; /* 鼠标悬停时的颜色 */
+    text-decoration: none; /* 鼠标悬停时不显示下划线 */
+    border-bottom: 2px solid #0056b3; /* 鼠标悬停时的下划线颜色 */
+}
+.info-div a:active {
+    color: #28a745; /* 鼠标点击时的颜色 */
+    border-bottom: 2px solid #28a745; /* 鼠标点击时的下划线颜色 */
+}
+.info-div ul li {
+    margin-top: 0.8em; /* 调整这个值来改变空行的大小 */
+}
+.info-div ul{
+    padding-left: 1em; /* 调整这个值来改变列表项的缩进 */
+}
+
 
 .footer-div {
     text-align: start;
@@ -66,15 +64,14 @@ body {
     margin-left: 1.9rem;
     font-size: 0.75rem;
     color: #6c757d;
-    a{
-        color: #6c757d;
-        text-decoration: none;
-    }
-    p{
-        margin-block: 0.5em;
-    }
 }
-
+.footer-div a{
+    color: #6c757d;
+    text-decoration: none;
+}
+.footer-div p{
+    margin-block: 0.5em;
+}
 
 
 /* 添加深色模式样式 */
