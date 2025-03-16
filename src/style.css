@@ -26,12 +26,12 @@ body {
 }
 .myname-text {
     font-size: 3.5rem;
-    .gradient-text{
-        background-image: linear-gradient(to right, #45e855f2, #62c6e7ce);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
+}
+.myname-text .gradient-text{
+    background-image: linear-gradient(to right, #45e855f2, #62c6e7ce);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 .ava-img-round {
     border-radius: 50%;
