@@ -14,8 +14,10 @@ body {
     margin: 0;
 }
 .main-div{
-    height: 100vh;
-    scroll-snap-type: y mandatory;
+    height: 100dvh;
+    scroll-snap-type: y mandatory; /* 启用垂直滚动捕捉 */
+    overflow-y: scroll;            /* 启用垂直滚动 */
+    scroll-behavior: smooth;       /* 平滑滚动效果 */
     scroll-snap-align: start; 
     overflow: auto;
 }
@@ -23,10 +25,10 @@ body {
 .avatar-area-div {
     display: flex;
     flex-direction: column;
-    height: 75vh;
+    height: 75dvh;
     align-items: center;
     text-align: center;
-    padding-top: 25vh;
+    padding-top: 25dvh;
     scroll-snap-align: start;
 }
 .ava-div {
@@ -55,10 +57,10 @@ body {
 }
 .info-area-div {
     margin: 0 auto 0 auto;      /* 水平居中 */
-    padding-left: 8vw;          /* 左侧弹性空距，vw为视口宽度百分比 */
+    padding-left: 2vw;          /* 左侧弹性空距，vw为视口宽度百分比 */
     padding-right: 2vw;         /* 右侧留点空间，防止溢出 */
     scroll-snap-align: start;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;    /* 垂直居中 */
@@ -72,25 +74,24 @@ body {
     align-items: flex-start;    /* 顶部对齐 */
 
     justify-content: center;    /* 主轴居中 */
-    gap: 2rem;                  /* 每个信息块之间的间距 */
 
     max-height: max-content; /* 根据内容自动调整高度 */
     /* 让盒子相较于info-area居中 */
     margin-left: 8rem;          /* 左侧空距，防止贴边 */
     margin-right: 8rem;
     text-align: left;           /* 左对齐 */
+    padding-bottom: 10vh;    /* 底部留点空间，防止溢出 */
 }
 .info-box-div {
     margin-right: 4rem;         /* 每个信息块之间的间距 */
-    /* border: 1px solid #ccc;  用于调试布局，可以删除 */
     max-width: 20rem;           /* 限制信息块的最大宽度 */
     max-height: max-content; /* 根据内容自动调整高度 */
     min-width: 6rem;           /* 限制信息块的最小宽度 */
+    margin-inline: 5vw;        /* 每个信息块之间的间距 */
 }
 .info-div a{
     color: #218dff;
     text-decoration: none; /* 去掉原有的下划线 */
-    border-bottom: 2px solid #007BFF; /* 添加下划线，可以调整粗细 */
 }
 .info-div a:hover {
     color: #0056b3; /* 鼠标悬停时的颜色 */
@@ -105,14 +106,14 @@ body {
     margin-top: 0.8em; /* 调整这个值来改变空行的大小 */
 }
 .info-div ul{
-    padding-left: 1em; /* 调整这个值来改变列表项的缩进 */
+    padding-left: 0em; /* 调整这个值来改变列表项的缩进 */
+    list-style: none;
 }
 
 
 .footer-div {
     text-align: center;
     margin-top: 2rem;
-    margin-left: 1.9rem;
     font-size: 0.75rem;
     color: #6c757d;
     scroll-snap-align: end; /* 底部吸附 */
@@ -137,10 +138,6 @@ body {
 
 /* 添加小设备样式 */
 @media (max-width: 480px) {
-    .main-div {
-        padding-top: 15%;
-    }
-
     .myname-text {
         font-size: 2.5rem;
         margin-top: 0.8rem;
@@ -155,19 +152,11 @@ body {
     }
     .info-div {
         margin-left: 1.6rem;
-        align-self: center;
         font-size: 1rem;
+        padding-bottom: 7dvh;
     }
     .ava-img-round {
         width: 40vw;
         height: 40vw;
     }
 }
-
-/* 添加大设备样式 
-@media (max-width: 600px) {
-    .myname-text {
-        margin-top: 0.8rem;
-    }
-}
-*/
