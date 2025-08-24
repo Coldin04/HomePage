@@ -87,7 +87,7 @@ body {
     max-width: 20rem;           /* 限制信息块的最大宽度 */
     max-height: max-content; /* 根据内容自动调整高度 */
     min-width: 6rem;           /* 限制信息块的最小宽度 */
-    margin-inline: 5vw;        /* 每个信息块之间的间距 */
+    margin-inline: 2.5rem;
 }
 .info-div a{
     color: #218dff;
