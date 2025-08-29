@@ -25,11 +25,11 @@ body {
 .avatar-area-div {
     display: flex;
     flex-direction: column;
-    height: 75dvh;
+    height: 100vh;
     align-items: center;
     text-align: center;
-    padding-top: 25dvh;
     scroll-snap-align: start;
+    justify-content: center;
 }
 .ava-div {
     display: flex;
@@ -37,7 +37,7 @@ body {
     align-items: center;
 }
 .myname-text {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 .myname-text .gradient-text{
     background-image: linear-gradient(to right, #45e855f2, #62c6e7ce);
@@ -48,10 +48,11 @@ body {
 .ava-img-round {
     border-radius: 50%;
     margin-block: 0;
+    max-width: 240px;
+    max-height: 240px;
 }
 .info-text-div {
     font-size: 1.2rem;
-    margin-top: 1rem;
     text-align: center;
     max-width: 25rem;
 }
@@ -148,7 +149,6 @@ body {
     .info-text-div {
         font-size: 1rem;
         max-width: 90vw;
-        margin-top: 1rem;
     }
     .info-div {
         margin-left: 1.6rem;
@@ -159,4 +159,26 @@ body {
         width: 40vw;
         height: 40vw;
     }
+}
+
+@media (orientation: landscape) {
+    .ava-img-round {
+        width: 38vh;
+        height: 38vh;
+    }
+}
+
+@media (max-height: 480px) {
+    .myname-text {
+        font-size: 2.5rem;
+        margin-block:  0.8rem;
+    }
+    .ava-div {
+        align-items: center;
+    }
+    .info-text-div {
+        font-size: 1rem;
+        max-width: 90vw;
+    }
+    
 }
