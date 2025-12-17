@@ -21,7 +21,7 @@
     <div id="announcement-banner" class="announcement-banner" style="display: none;">
         <div class="announcement-content">
             <i class="fa-solid fa-triangle-exclamation"></i>
-            <span>重要公告：coldin.top 将于 2028年7月27日 弃用，请添加了旧的友链的伙伴及时迁移到 <a href="https://cold04.com/links" target="_blank">cold04.com</a></span>
+            <span>重要公告：coldin.top 将于 2028年7月27日 弃用，请添加了旧的友链的伙伴及时迁移到 <a href="https://cold04.com/links" target="_blank" style="color: inherit; text-decoration: none; font-weight: bold;">cold04.com</a></span>
             <button id="close-banner" class="close-btn" aria-label="关闭"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
@@ -107,6 +107,9 @@
         function checkAndShowAnnouncement() {
             const referrer = document.referrer;
             const currentHost = window.location.hostname;
+            // 精确匹配旧域名用于重置计数
+            const isOldDomain = currentHost === 'coldin.top' || currentHost === 'www.coldin.top';
+            // 来源检测（包含当前域名是旧域名的情况）
             const fromColdintop = referrer.includes('coldin.top') || currentHost.includes('coldin.top');
             
             const banner = document.getElementById('announcement-banner');
@@ -117,36 +120,64 @@
             const confirmModal = document.getElementById('confirm-modal');
             const copyButtons = document.querySelectorAll('.copy-btn');
             
-            // 始终显示横幅
-            banner.style.display = 'flex';
-            
-            // 如果从 coldin.top 访问，显示弹窗
-            if (fromColdintop) {
-                modal.style.display = 'block';
-                backdrop.style.display = 'block';
-                document.body.style.overflow = 'hidden'; // 禁用背景滚动
+            // 计数器 Key
+            const COUNT_KEY = 'announcement-close-count';
+            const MAX_COUNT = 2;
+
+            // 如果当前直接访问旧域名，重置计数器
+            if (isOldDomain) {
+                localStorage.setItem(COUNT_KEY, '0');
             }
+
+            // 获取当前关闭次数
+            let closeCount = parseInt(localStorage.getItem(COUNT_KEY) || '0');
+
+            // 判断是否应该显示：是旧域名 OR 关闭次数未达标
+            const shouldShow = isOldDomain || closeCount < MAX_COUNT;
+            
+            if (shouldShow) {
+                // 显示横幅
+                banner.style.display = 'flex';
+                
+                // 如果从 coldin.top 访问，显示弹窗
+                if (fromColdintop) {
+                    modal.style.display = 'block';
+                    backdrop.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // 禁用背景滚动
+                }
+            }
+
+            // 增加计数的辅助函数
+            const incrementCount = () => {
+                if (!isOldDomain) { // 在旧域名上关闭不增加计数，保证每次刷新都显示？或者也增加？
+                    // 需求说“访问coldin.top...则重置这个”，意味着在旧域名上会重置为0。
+                    // 如果在旧域名上关闭了，count变成1。刷新页面，又重置为0。符合“重置”的描述。
+                    // 如果在新域名，count累加，到了2就不显示。
+                    closeCount++;
+                    localStorage.setItem(COUNT_KEY, closeCount.toString());
+                }
+            };
             
             // 关闭横幅
             closeBanner.addEventListener('click', () => {
                 banner.style.display = 'none';
-                localStorage.setItem('announcement-banner-closed', 'true');
+                incrementCount();
             });
             
             // 关闭弹窗
+            const closePopup = () => {
+                modal.style.display = 'none';
+                backdrop.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                incrementCount();
+            };
+
             closeModal.addEventListener('click', closePopup);
             confirmModal.addEventListener('click', closePopup);
             backdrop.addEventListener('click', closePopup);
             copyButtons.forEach((btn) => {
                 btn.addEventListener('click', () => handleCopy(btn));
             });
-            
-            function closePopup() {
-                modal.style.display = 'none';
-                backdrop.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                localStorage.setItem('announcement-modal-closed', 'true');
-            }
 
             function handleCopy(btn) {
                 const text = btn.dataset.copy || '';
