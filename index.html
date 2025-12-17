@@ -107,10 +107,15 @@
         function checkAndShowAnnouncement() {
             const referrer = document.referrer;
             const currentHost = window.location.hostname;
-            // 精确匹配旧域名用于重置计数
+            // 获取 URL 参数（作为 301 跳转的保险措施）
+            const urlParams = new URLSearchParams(window.location.search);
+            const isFromParam = urlParams.get('from') === 'coldin.top';
+
+            // 精确匹配旧域名
             const isOldDomain = currentHost === 'coldin.top' || currentHost === 'www.coldin.top';
-            // 来源检测（包含当前域名是旧域名的情况）
-            const fromColdintop = referrer.includes('coldin.top') || currentHost.includes('coldin.top');
+            
+            // 来源检测：Referrer 包含旧域名 OR 当前是旧域名 OR URL参数指定
+            const fromColdintop = referrer.includes('coldin.top') || isOldDomain || isFromParam;
             
             const banner = document.getElementById('announcement-banner');
             const modal = document.getElementById('announcement-modal');
@@ -124,35 +129,33 @@
             const COUNT_KEY = 'announcement-close-count';
             const MAX_COUNT = 2;
 
-            // 如果当前直接访问旧域名，重置计数器
-            if (isOldDomain) {
+            // 核心逻辑修改：只要是从 coldin.top 来的（包括 301 跳转），就强制重置计数器
+            if (fromColdintop) {
                 localStorage.setItem(COUNT_KEY, '0');
             }
 
             // 获取当前关闭次数
             let closeCount = parseInt(localStorage.getItem(COUNT_KEY) || '0');
 
-            // 判断是否应该显示：是旧域名 OR 关闭次数未达标
-            const shouldShow = isOldDomain || closeCount < MAX_COUNT;
+            // 判断是否应该显示：来源是旧域名 OR 关闭次数未达标
+            const shouldShow = fromColdintop || closeCount < MAX_COUNT;
             
             if (shouldShow) {
                 // 显示横幅
                 banner.style.display = 'flex';
                 
-                // 如果从 coldin.top 访问，显示弹窗
+                // 如果明确是从 coldin.top 来的，显示强弹窗
                 if (fromColdintop) {
                     modal.style.display = 'block';
                     backdrop.style.display = 'block';
-                    document.body.style.overflow = 'hidden'; // 禁用背景滚动
+                    document.body.style.overflow = 'hidden'; 
                 }
             }
 
             // 增加计数的辅助函数
             const incrementCount = () => {
-                if (!isOldDomain) { // 在旧域名上关闭不增加计数，保证每次刷新都显示？或者也增加？
-                    // 需求说“访问coldin.top...则重置这个”，意味着在旧域名上会重置为0。
-                    // 如果在旧域名上关闭了，count变成1。刷新页面，又重置为0。符合“重置”的描述。
-                    // 如果在新域名，count累加，到了2就不显示。
+                // 只有在非强制显示的情况下才增加计数（避免旧域名用户刷新后计数增加）
+                if (!fromColdintop) {
                     closeCount++;
                     localStorage.setItem(COUNT_KEY, closeCount.toString());
                 }
