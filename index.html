@@ -17,6 +17,39 @@
 
 
 <body>
+    <!-- 公告横幅 -->
+    <div id="announcement-banner" class="announcement-banner" style="display: none;">
+        <div class="announcement-content">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>重要公告：coldin.top 将于 2028年7月27日弃用，请添加了旧的友链的伙伴及时迁移</span>
+            <button id="close-banner" class="close-btn" aria-label="关闭"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+    <!-- 弹窗提示 -->
+    <div id="announcement-modal" class="announcement-modal" style="display: none;">
+        <div class="announcement-modal-content">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-triangle-exclamation"></i> 重要通知</h2>
+                <button id="close-modal" class="modal-close-btn" aria-label="关闭">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>您正在访问 <strong>coldin.top</strong>，该域名将在 <strong>2028年7月27日</strong> 正式弃用。</p>
+                <p>如果您是添加了旧的友情链接的伙伴，请尽快更新您的链接地址，指向以下域名：</p>
+                <ul>
+                    <li><strong>博客</strong>: blog.cold04.com</li>
+                    <li><strong>笔记</strong>: note.cold04.com</li>
+                </ul>
+                <p>感谢您的理解与配合！</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://blog.cold04.com/links" target="_blank" class="btn btn-primary">查看友情链接</a>
+                <button id="confirm-modal" class="btn btn-secondary">我知道了</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-backdrop" class="modal-backdrop" style="display: none;"></div>
+
     <div class="main-div">
         
         <div class="avatar-area-div">
@@ -39,8 +72,8 @@
                 <div class="info-box-div">
                     <h3>一些工作</h3>
                     <ul>
-                        <li><a href="https://note.coldin.top" target="_blank"><i class="fa-solid fa-book"></i> &nbsp;笔记</a></li>
-                        <li><a href="https://blog.coldin.top" target="_blank"><i class="fa-solid fa-blog"></i>  &nbsp;博客</a></li>
+                        <li><a href="https://note.cold04.com" target="_blank"><i class="fa-solid fa-book"></i> &nbsp;笔记</a></li>
+                        <li><a href="https://blog.cold04.com" target="_blank"><i class="fa-solid fa-blog"></i>  &nbsp;博客</a></li>
                         <li><a href="https://github.com/coldin04" target="_blank"><i class="fab fa-github"></i>  &nbsp;Github</a></li>
                     </ul>
                 </div>
@@ -50,7 +83,6 @@
                     <ul>
                         <li><a href="https://space.bilibili.com/356490973" target="_blank"><i class="fab fa-bilibili"></i> &nbsp;B站</a></li>
                         <li><a href="https://t.me/blog_0i7" target="_blank"><i class="fa-brands fa-telegram fa-sm"></i> &nbsp;Telegram</a></li>
-                        <li><a href="https://app.ens.domains/coldin.eth" target="_blank"><i class="fa-brands fa-ethereum"></i> &nbsp;ENS</a></li>
                     </ul>
                 </div>
         
@@ -65,10 +97,61 @@
         </div>
 
         <div class="footer-div">
-            <p>© 2025 Coldin04 &nbsp;</p>
+            <p>© 2026 Coldin04 &nbsp;</p>
             <a href="https://icp.gov.moe/?keyword=20239972" style="text-decoration: none; border-bottom: none !important;" class="mdui-text-color-theme-700">萌ICP备20239972号</a>
         </div>
     </div>
+
+    <script>
+        // 检测是否从 coldin.top 访问
+        function checkAndShowAnnouncement() {
+            const referrer = document.referrer;
+            const currentHost = window.location.hostname;
+            const fromColdintop = referrer.includes('coldin.top') || currentHost.includes('coldin.top');
+            
+            const banner = document.getElementById('announcement-banner');
+            const modal = document.getElementById('announcement-modal');
+            const backdrop = document.getElementById('modal-backdrop');
+            const closeBanner = document.getElementById('close-banner');
+            const closeModal = document.getElementById('close-modal');
+            const confirmModal = document.getElementById('confirm-modal');
+            
+            // 始终显示横幅
+            banner.style.display = 'flex';
+            
+            // 如果从 coldin.top 访问，显示弹窗
+            if (fromColdintop) {
+                modal.style.display = 'block';
+                backdrop.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // 禁用背景滚动
+            }
+            
+            // 关闭横幅
+            closeBanner.addEventListener('click', () => {
+                banner.style.display = 'none';
+                localStorage.setItem('announcement-banner-closed', 'true');
+            });
+            
+            // 关闭弹窗
+            closeModal.addEventListener('click', closePopup);
+            confirmModal.addEventListener('click', closePopup);
+            backdrop.addEventListener('click', closePopup);
+            
+            function closePopup() {
+                modal.style.display = 'none';
+                backdrop.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                localStorage.setItem('announcement-modal-closed', 'true');
+            }
+        }
+        
+        // 页面加载完成后执行
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkAndShowAnnouncement);
+        } else {
+            checkAndShowAnnouncement();
+        }
+    </script>
 </body>
 
 </html>
