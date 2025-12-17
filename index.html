@@ -37,8 +37,8 @@
                 <p>您正在访问 <strong>coldin.top</strong>，该域名将在 <strong>2028年7月27日</strong> 正式弃用。</p>
                 <p>如果您是添加了旧的友情链接的伙伴，请尽快更新您的链接地址，指向以下域名：</p>
                 <ul>
-                    <li><strong>博客</strong>: blog.cold04.com</li>
-                    <li><strong>笔记</strong>: note.cold04.com</li>
+                    <li><strong>博客</strong>: blog.cold04.com <button class="copy-btn" data-copy="blog.cold04.com" type="button">复制</button></li>
+                    <li><strong>笔记</strong>: note.cold04.com <button class="copy-btn" data-copy="note.cold04.com" type="button">复制</button></li>
                 </ul>
                 <p>感谢您的理解与配合！</p>
             </div>
@@ -115,6 +115,7 @@
             const closeBanner = document.getElementById('close-banner');
             const closeModal = document.getElementById('close-modal');
             const confirmModal = document.getElementById('confirm-modal');
+            const copyButtons = document.querySelectorAll('.copy-btn');
             
             // 始终显示横幅
             banner.style.display = 'flex';
@@ -136,12 +137,47 @@
             closeModal.addEventListener('click', closePopup);
             confirmModal.addEventListener('click', closePopup);
             backdrop.addEventListener('click', closePopup);
+            copyButtons.forEach((btn) => {
+                btn.addEventListener('click', () => handleCopy(btn));
+            });
             
             function closePopup() {
                 modal.style.display = 'none';
                 backdrop.style.display = 'none';
                 document.body.style.overflow = 'auto';
                 localStorage.setItem('announcement-modal-closed', 'true');
+            }
+
+            function handleCopy(btn) {
+                const text = btn.dataset.copy || '';
+                if (!text) return;
+                const original = btn.textContent;
+                const setCopied = () => {
+                    btn.textContent = '已复制';
+                    setTimeout(() => { btn.textContent = original; }, 1500);
+                };
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(setCopied).catch(() => fallbackCopy(text, btn, original));
+                } else {
+                    fallbackCopy(text, btn, original);
+                }
+            }
+
+            function fallbackCopy(text, btn, original) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.top = '-1000px';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    btn.textContent = '已复制';
+                    setTimeout(() => { btn.textContent = original; }, 1500);
+                } catch (err) {
+                    console.error('复制失败', err);
+                }
+                document.body.removeChild(textarea);
             }
         }
         
