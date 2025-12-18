@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: cold04.com
+Sitemap: https://cold04.com/sitemap.xml
