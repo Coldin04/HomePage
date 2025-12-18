@@ -3,7 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hi, I'm Coldin04, a student. Welcome to my homepage.">
+<meta name="description" content="酷丁 Coldin04 的个人主页，分享开发小项目、笔记和博客，风格轻松随意。">
+<meta name="keywords" content="酷丁,Coldin04,coldin04,开发者,个人主页,博客,笔记,技术">
+<meta name="author" content="Coldin04">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#fafafa">
+<link rel="canonical" href="https://cold04.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="酷丁的主页 | Coldin04">
+<meta property="og:description" content="酷丁 Coldin04 的个人主页，链接博客、笔记与开源账号。">
+<meta property="og:url" content="https://cold04.com/">
+<meta property="og:image" content="https://cold04.com/src/avatar.webp">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
 
 <title>酷丁的主页</title>
 <link rel="shortcut icon" type="image/x-icon" href="src/favicon.ico">
@@ -11,6 +23,24 @@
 <!-- 引入字体图标 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="src/style.css">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Coldin04",
+    "alternateName": "酷丁",
+    "url": "https://cold04.com/",
+    "image": "https://cold04.com/src/avatar.webp",
+    "jobTitle": "Developer",
+    "sameAs": [
+        "https://github.com/coldin04",
+        "https://blog.cold04.com",
+        "https://note.cold04.com",
+        "https://space.bilibili.com/356490973"
+    ]
+}
+</script>
 
 </head>
 
@@ -21,35 +51,10 @@
     <div id="announcement-banner" class="announcement-banner" style="display: none;">
         <div class="announcement-content">
             <i class="fa-solid fa-triangle-exclamation"></i>
-            <span>重要公告：coldin.top 将于 2028年7月27日 弃用，请添加了旧的友链的伙伴及时迁移到 <a href="https://cold04.com/links" target="_blank" style="color: inherit; text-decoration: none; font-weight: bold;">cold04.com</a></span>
+            <span>重要公告：coldin.top 将于 2028年7月27日 弃用，请添加了旧的友链的伙伴及时迁移到 <a href="https://cold04.com/" target="_blank" style="color: inherit; text-decoration: none; font-weight: bold;">cold04.com</a></span>
             <button id="close-banner" class="close-btn" aria-label="关闭"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
-
-    <!-- 弹窗提示 -->
-    <div id="announcement-modal" class="announcement-modal" style="display: none;">
-        <div class="announcement-modal-content">
-            <div class="modal-header">
-                <h2><i class="fa-solid fa-triangle-exclamation"></i> 重要通知</h2>
-                <button id="close-modal" class="modal-close-btn" aria-label="关闭">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>您正在访问 <strong>coldin.top</strong>，该域名将在 <strong>2028年7月27日</strong> 正式弃用。</p>
-                <p>如果您是添加了旧的友情链接的伙伴，请尽快更新您的链接地址，指向以下域名：</p>
-                <ul>
-                    <li><strong>博客</strong>: blog.cold04.com <button class="copy-btn" data-copy="blog.cold04.com" type="button">复制</button></li>
-                    <li><strong>笔记</strong>: note.cold04.com <button class="copy-btn" data-copy="note.cold04.com" type="button">复制</button></li>
-                </ul>
-                <p>感谢您的理解与配合！</p>
-            </div>
-            <div class="modal-footer">
-                <a href="https://blog.cold04.com/links" target="_blank" class="btn btn-primary">查看友情链接</a>
-                <button id="confirm-modal" class="btn btn-secondary">我知道了</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal-backdrop" class="modal-backdrop" style="display: none;"></div>
-
     <div class="main-div">
         
         <div class="avatar-area-div">
@@ -60,8 +65,8 @@
         
             <div class="info-text-div">
                 <p>
-                    你好，我是酷丁<br>
-                    我的专业和计算机有关，但目前还是菜鸟
+                    嗨，我是酷丁，一个还在升级中的开发者<br>
+                    以后会把自己折腾的项目、笔记和踩坑故事丢到这里，欢迎围观
                 </p>
             </div>
         </div>
@@ -70,7 +75,7 @@
         <div class="info-area-div">
             <div class="info-div">
                 <div class="info-box-div">
-                    <h3>一些工作</h3>
+                    <h3>正在折腾</h3>
                     <ul>
                         <li><a href="https://note.cold04.com" target="_blank"><i class="fa-solid fa-book"></i> &nbsp;笔记</a></li>
                         <li><a href="https://blog.cold04.com" target="_blank"><i class="fa-solid fa-blog"></i>  &nbsp;博客</a></li>
@@ -103,119 +108,48 @@
     </div>
 
     <script>
-        // 检测是否从 coldin.top 访问
+        // 只保留横幅提示，去掉弹窗
         function checkAndShowAnnouncement() {
-            const referrer = document.referrer;
+            const referrer = document.referrer || '';
             const currentHost = window.location.hostname;
-            // 获取 URL 参数（作为 301 跳转的保险措施）
             const urlParams = new URLSearchParams(window.location.search);
             const isFromParam = urlParams.get('from') === 'coldin.top';
 
-            // 精确匹配旧域名
             const isOldDomain = currentHost === 'coldin.top' || currentHost === 'www.coldin.top';
-            
-            // 来源检测：Referrer 包含旧域名 OR 当前是旧域名 OR URL参数指定
             const fromColdintop = referrer.includes('coldin.top') || isOldDomain || isFromParam;
-            
-            const banner = document.getElementById('announcement-banner');
-            const modal = document.getElementById('announcement-modal');
-            const backdrop = document.getElementById('modal-backdrop');
-            const closeBanner = document.getElementById('close-banner');
-            const closeModal = document.getElementById('close-modal');
-            const confirmModal = document.getElementById('confirm-modal');
-            const copyButtons = document.querySelectorAll('.copy-btn');
-            
-            // 计数器 Key
-            const COUNT_KEY = 'announcement-close-count';
-            const MAX_COUNT = 2;
 
-            // 核心逻辑修改：只要是从 coldin.top 来的（包括 301 跳转），就强制重置计数器
+            const banner = document.getElementById('announcement-banner');
+            const closeBanner = document.getElementById('close-banner');
+
+            const COUNT_KEY = 'announcement-close-count';
+            const MAX_COUNT = 5;
+
             if (fromColdintop) {
                 localStorage.setItem(COUNT_KEY, '0');
             }
 
-            // 获取当前关闭次数
-            let closeCount = parseInt(localStorage.getItem(COUNT_KEY) || '0');
-
-            // 判断是否应该显示：来源是旧域名 OR 关闭次数未达标
+            let closeCount = parseInt(localStorage.getItem(COUNT_KEY) || '0', 10);
             const shouldShow = fromColdintop || closeCount < MAX_COUNT;
-            
-            if (shouldShow) {
-                // 显示横幅
+
+            if (shouldShow && banner) {
                 banner.style.display = 'flex';
-                
-                // 如果明确是从 coldin.top 来的，显示强弹窗
-                if (fromColdintop) {
-                    modal.style.display = 'block';
-                    backdrop.style.display = 'block';
-                    document.body.style.overflow = 'hidden'; 
-                }
             }
 
-            // 增加计数的辅助函数
             const incrementCount = () => {
-                // 只有在非强制显示的情况下才增加计数（避免旧域名用户刷新后计数增加）
                 if (!fromColdintop) {
-                    closeCount++;
+                    closeCount += 1;
                     localStorage.setItem(COUNT_KEY, closeCount.toString());
                 }
             };
-            
-            // 关闭横幅
-            closeBanner.addEventListener('click', () => {
-                banner.style.display = 'none';
-                incrementCount();
-            });
-            
-            // 关闭弹窗
-            const closePopup = () => {
-                modal.style.display = 'none';
-                backdrop.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                incrementCount();
-            };
 
-            closeModal.addEventListener('click', closePopup);
-            confirmModal.addEventListener('click', closePopup);
-            backdrop.addEventListener('click', closePopup);
-            copyButtons.forEach((btn) => {
-                btn.addEventListener('click', () => handleCopy(btn));
-            });
-
-            function handleCopy(btn) {
-                const text = btn.dataset.copy || '';
-                if (!text) return;
-                const original = btn.textContent;
-                const setCopied = () => {
-                    btn.textContent = '已复制';
-                    setTimeout(() => { btn.textContent = original; }, 1500);
-                };
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(text).then(setCopied).catch(() => fallbackCopy(text, btn, original));
-                } else {
-                    fallbackCopy(text, btn, original);
-                }
-            }
-
-            function fallbackCopy(text, btn, original) {
-                const textarea = document.createElement('textarea');
-                textarea.value = text;
-                textarea.style.position = 'fixed';
-                textarea.style.top = '-1000px';
-                document.body.appendChild(textarea);
-                textarea.select();
-                try {
-                    document.execCommand('copy');
-                    btn.textContent = '已复制';
-                    setTimeout(() => { btn.textContent = original; }, 1500);
-                } catch (err) {
-                    console.error('复制失败', err);
-                }
-                document.body.removeChild(textarea);
+            if (closeBanner) {
+                closeBanner.addEventListener('click', () => {
+                    banner.style.display = 'none';
+                    incrementCount();
+                });
             }
         }
-        
-        // 页面加载完成后执行
+
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', checkAndShowAnnouncement);
         } else {
