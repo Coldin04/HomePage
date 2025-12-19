@@ -56,6 +56,23 @@ body {
     text-align: center;
     max-width: 25rem;
 }
+
+.hero-tagline {
+    max-width: 44rem;
+    padding-inline: 1rem;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.65;
+}
+
+.hero-tagline span {
+    display: block;
+}
+
+.hero-tagline span + span {
+    margin-top: 0.2rem;
+}
 .info-area-div {
     margin: 0 auto 0 auto;      /* 水平居中 */
     padding-left: 2vw;          /* 左侧弹性空距，vw为视口宽度百分比 */
@@ -155,6 +172,12 @@ body {
     .info-text-div {
         font-size: 1rem;
         max-width: 90vw;
+    }
+    .hero-tagline {
+        max-width: 92vw;
+        padding-inline: 0.75rem;
+        font-size: 0.92rem;
+        line-height: 1.5;
     }
     .info-div {
         margin-left: 1.6rem;
