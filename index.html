@@ -3,21 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="酷丁 Coldin04 的个人主页，分享开发小项目、笔记和博客，风格轻松随意。">
+<meta name="description" content="Coldin04 的个人主页（昵称：酷丁）。一个开发者分享项目、技术笔记和博客文章。也欢迎直接搜索“Coldin04”或“酷丁”。">
 <meta name="keywords" content="酷丁,Coldin04,coldin04,开发者,个人主页,博客,笔记,技术">
 <meta name="author" content="Coldin04">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#fafafa">
+<meta name="application-name" content="Coldin04 的主页">
 <link rel="canonical" href="https://cold04.com/">
+<meta property="og:site_name" content="Coldin04 的主页">
 <meta property="og:type" content="website">
-<meta property="og:title" content="酷丁的主页 | Coldin04">
-<meta property="og:description" content="酷丁 Coldin04 的个人主页，链接博客、笔记与开源账号。">
+<meta property="og:title" content="Coldin04 的主页（酷丁） - 开发者笔记与项目分享">
+<meta property="og:description" content="Coldin04 的个人主页（昵称：酷丁），分享开发项目、技术笔记、博客文章和开源作品。">
 <meta property="og:url" content="https://cold04.com/">
 <meta property="og:image" content="https://cold04.com/src/avatar.webp">
 <meta property="og:locale" content="zh_CN">
+<meta name="baidu-site-verification" content="codeva-r9V5E5cvfQ" />
 <meta name="twitter:card" content="summary">
 
-<title>酷丁的主页</title>
+<title>Coldin04 的主页 | 开发者博客笔记（酷丁）</title>
 <link rel="shortcut icon" type="image/x-icon" href="src/favicon.ico">
 
 <!-- 引入字体图标 -->
@@ -28,17 +31,39 @@
 {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://cold04.com/#person",
     "name": "Coldin04",
-    "alternateName": "酷丁",
+    "alternateName": ["酷丁", "coldin04"],
     "url": "https://cold04.com/",
     "image": "https://cold04.com/src/avatar.webp",
     "jobTitle": "Developer",
+    "description": "Coldin04（酷丁）是一位开发者，分享技术项目、编程笔记和博客文章",
     "sameAs": [
         "https://github.com/coldin04",
         "https://blog.cold04.com",
         "https://note.cold04.com",
         "https://space.bilibili.com/356490973"
     ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Coldin04 的主页",
+    "alternateName": ["酷丁的主页", "Coldin04 homepage"],
+    "url": "https://cold04.com/",
+    "inLanguage": "zh-CN",
+    "author": {
+        "@id": "https://cold04.com/#person"
+    },
+    "description": "Coldin04（酷丁）的个人主页，展示项目、技术笔记和博客入口。",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.google.com/search?q=Coldin04+{search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
 }
 </script>
 
@@ -59,16 +84,19 @@
         
         <div class="avatar-area-div">
             <div class="ava-div">
-                <img src="src/avatar.webp" alt="Coldin04" class="ava-img-round" loading="lazy">
-                <h1 class="myname-text"><span class="gradient-text">Coldin04</span></h1>
+                <img src="src/avatar.webp" alt="Coldin04 / 酷丁" class="ava-img-round" loading="lazy">
+                <h1 class="myname-text"><span class="gradient-text">Coldin04</span><small style="display: block; font-size: 0.5em; font-weight: normal; margin-top: 0.3em; color: #888;">酷丁</small></h1>
             </div>
         
             <div class="info-text-div">
                 <p>
-                    嗨，我是酷丁，一个还在升级中的开发者<br>
+                    嗨，我是 Coldin04，昵称<strong>酷丁</strong>，一个还在升级中的开发者<br>
                     以后会把自己折腾的项目、笔记和踩坑故事丢到这里，欢迎围观
                 </p>
             </div>
+            <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem; text-align: center;">
+                这里是 <strong>Coldin04</strong>（酷丁同学）的主页，开发者/开源爱好者的聚合入口。
+            </p>
         </div>
 
 
@@ -102,7 +130,8 @@
         </div>
 
         <div class="footer-div">
-            <p>© 2026 Coldin04 &nbsp;</p>
+            <p>© 2026 Coldin04(酷丁) &nbsp;</p>
+            <p style="font-size: 0.65rem; color: #aaa; margin-top: 0.5rem;">开发者 | 开源爱好者 | 分享技术与项目</p>
             <a href="https://icp.gov.moe/?keyword=20239972" style="text-decoration: none; border-bottom: none !important;" class="mdui-text-color-theme-700">萌ICP备20239972号</a>
         </div>
     </div>
