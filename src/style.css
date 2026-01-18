@@ -383,3 +383,16 @@ body {
         width: 100%;
     }
 }
+
+
+/* 滚动动画辅助类 */
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
