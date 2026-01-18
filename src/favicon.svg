@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Coldin04 ribbon mark</title>
+  <desc id="desc">Minimal ribbon bookmark with a cut notch, rightward blue gradient.</desc>
+  <defs>
+    <linearGradient id="ribbonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8baaf0" />
+      <stop offset="100%" stop-color="#a2d9f5" />
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M12 8c0-2.2 1.8-4 4-4h32c2.2 0 4 1.8 4 4v48L32 42 12 56V8z"
+    fill="url(#ribbonGradient)"
+    stroke="#5f7fb9"
+    stroke-width="2"
+    stroke-linejoin="round" />
+</svg>

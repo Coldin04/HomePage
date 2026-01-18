@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
     height: 100%;
@@ -13,12 +14,12 @@ body {
     align-items: center;
     margin: 0;
 }
-.main-div{
+.main-div {
     height: 100dvh;
     scroll-snap-type: y mandatory; /* 启用垂直滚动捕捉 */
-    overflow-y: scroll;            /* 启用垂直滚动 */
-    scroll-behavior: smooth;       /* 平滑滚动效果 */
-    scroll-snap-align: start; 
+    overflow-y: scroll; /* 启用垂直滚动 */
+    scroll-behavior: smooth; /* 平滑滚动效果 */
+    scroll-snap-align: start;
     overflow: auto;
 }
 
@@ -39,11 +40,12 @@ body {
 .myname-text {
     font-size: 3.5rem;
 }
-.myname-text .gradient-text{
-    background-image: linear-gradient(to right, #45e855f2, #62c6e7ce);
+.myname-text .gradient-text {
+    background-image: linear-gradient(to right, #8baaf0 0%, #a2d9f5 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
 }
 .ava-img-round {
     border-radius: 50%;
@@ -74,60 +76,58 @@ body {
     margin-top: 0.2rem;
 }
 .info-area-div {
-    margin: 0 auto 0 auto;      /* 水平居中 */
-    padding-left: 2vw;          /* 左侧弹性空距，vw为视口宽度百分比 */
-    padding-right: 2vw;         /* 右侧留点空间，防止溢出 */
+    margin: 0 auto 0 auto; /* 水平居中 */
+    padding-left: 2vw; /* 左侧弹性空距，vw为视口宽度百分比 */
+    padding-right: 2vw; /* 右侧留点空间，防止溢出 */
     scroll-snap-align: start;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: center;    /* 垂直居中 */
-
-}   
+    justify-content: center; /* 垂直居中 */
+}
 .info-div {
     display: flex;
 
-    flex-direction: row;        /* 横向排列 */
+    flex-direction: row; /* 横向排列 */
     flex-wrap: wrap;
-    align-items: flex-start;    /* 顶部对齐 */
+    align-items: flex-start; /* 顶部对齐 */
 
-    justify-content: center;    /* 主轴居中 */
+    justify-content: center; /* 主轴居中 */
 
     max-height: max-content; /* 根据内容自动调整高度 */
     /* 让盒子相较于info-area居中 */
-    margin-left: 8rem;          /* 左侧空距，防止贴边 */
+    margin-left: 8rem; /* 左侧空距，防止贴边 */
     margin-right: 8rem;
-    text-align: left;           /* 左对齐 */
-    padding-bottom: 10vh;    /* 底部留点空间，防止溢出 */
+    text-align: left; /* 左对齐 */
+    padding-bottom: 10vh; /* 底部留点空间，防止溢出 */
 }
 .info-box-div {
-    margin-right: 4rem;         /* 每个信息块之间的间距 */
-    max-width: 20rem;           /* 限制信息块的最大宽度 */
+    margin-right: 4rem; /* 每个信息块之间的间距 */
+    max-width: 20rem; /* 限制信息块的最大宽度 */
     max-height: max-content; /* 根据内容自动调整高度 */
-    min-width: 6rem;           /* 限制信息块的最小宽度 */
+    min-width: 6rem; /* 限制信息块的最小宽度 */
     margin-inline: 2.5rem;
 }
-.info-div a{
-    color: #218dff;
+.info-div a {
+    color: #8baaf0;
     text-decoration: none; /* 去掉原有的下划线 */
 }
 .info-div a:hover {
-    color: #0056b3; /* 鼠标悬停时的颜色 */
+    color: #78b2ec; /* 鼠标悬停时的颜色 */
     text-decoration: none; /* 鼠标悬停时不显示下划线 */
-    border-bottom: 2px solid #0056b3; /* 鼠标悬停时的下划线颜色 */
+    border-bottom: 2px solid #8baaf0; /* 鼠标悬停时的下划线颜色 */
 }
 .info-div a:active {
-    color: #28a745; /* 鼠标点击时的颜色 */
-    border-bottom: 2px solid #28a745; /* 鼠标点击时的下划线颜色 */
+    color: #2d527a; /* 鼠标点击时的颜色 */
+    border-bottom: 2px solid #2d527a; /* 鼠标点击时的下划线颜色 */
 }
 .info-div ul li {
     margin-top: 0.8em; /* 调整这个值来改变空行的大小 */
 }
-.info-div ul{
+.info-div ul {
     padding-left: 0em; /* 调整这个值来改变列表项的缩进 */
     list-style: none;
 }
-
 
 .footer-div {
     text-align: center;
@@ -137,7 +137,7 @@ body {
     scroll-snap-align: end; /* 底部吸附 */
     padding: 5vh;
 }
-.footer-div a{
+.footer-div a {
     color: #6c757d;
     text-decoration: none;
 }
@@ -147,14 +147,13 @@ body {
     text-decoration: none;
     border-bottom: none;
 }
-.footer-div p{
+.footer-div p {
     margin-block: 0.5em;
 }
 
-
 /* 添加深色模式样式 */
 @media (prefers-color-scheme: dark) {
-    body{
+    body {
         background-color: #2e2e2e;
         color: #fff;
     }
@@ -200,7 +199,7 @@ body {
 @media (max-height: 480px) {
     .myname-text {
         font-size: 2.5rem;
-        margin-block:  0.8rem;
+        margin-block: 0.8rem;
     }
     .ava-div {
         align-items: center;
@@ -209,7 +208,6 @@ body {
         font-size: 1rem;
         max-width: 90vw;
     }
-    
 }
 
 /* ============ 公告样式 ============ */
@@ -220,14 +218,15 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #f8961e 0%, #ff6b6b 100%);
-    color: white;
+    background: linear-gradient(to right, #8baaf0 0%, #a2d9f5 100%);
+    color: #f2f8ff;
     padding: 1rem;
     z-index: 998;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(139, 170, 240, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px);
 }
 
 .announcement-content {
@@ -254,7 +253,7 @@ body {
 .close-btn {
     background: none;
     border: none;
-    color: white;
+    color: #f2f8ff;
     cursor: pointer;
     font-size: 1.2rem;
     padding: 0;
@@ -262,10 +261,12 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s;
 }
 
 .close-btn:hover {
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .btn-primary {
@@ -291,37 +292,43 @@ body {
 
 /* 深色模式 */
 @media (prefers-color-scheme: dark) {
+    .announcement-banner {
+        color: #2c3e50;
+    }
     .announcement-modal {
         background: #2e2e2e;
         color: #fff;
     }
-    
+    .close-btn {
+        color: #2c3e50;;
+    }
+
     .modal-header {
         border-bottom-color: #444;
     }
-    
+
     .modal-header h2 {
         color: #fff;
     }
-    
+
     .modal-body {
         color: #ddd;
     }
-    
+
     .modal-body li {
         color: #ccc;
     }
-    
+
     .modal-footer {
         border-top-color: #444;
     }
-    
+
     .btn-secondary {
         background: #444;
         color: #fff;
         border-color: #555;
     }
-    
+
     .btn-secondary:hover {
         background: #555;
     }
@@ -332,30 +339,30 @@ body {
     .announcement-banner {
         padding: 0.8rem;
     }
-    
+
     .announcement-content {
         font-size: 0.85rem;
         gap: 0.5rem;
     }
-    
+
     .announcement-content span {
         min-width: 150px;
     }
-    
+
     .announcement-modal {
         max-width: 95%;
     }
-    
+
     .modal-header h2 {
         font-size: 1.2rem;
     }
-    
+
     .modal-footer {
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
     }
-    
+
     .modal-footer .btn {
         width: 100%;
     }
@@ -366,12 +373,12 @@ body {
         width: 94%;
         max-width: 480px;
     }
-    
+
     .modal-footer {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .modal-footer .btn {
         width: 100%;
     }
