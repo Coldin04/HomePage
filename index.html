@@ -83,7 +83,7 @@
     </div>
     <div class="main-div">
         
-        <div class="avatar-area-div">
+        <div class="avatar-area-div scroll-hidden">
             <div class="ava-div">
                 <img src="src/avatar.webp" alt="Coldin04 / 酷丁" class="ava-img-round" loading="lazy">
                 <h1 class="myname-text"><span class="gradient-text">Coldin04</span><small style="display: block; font-size: 0.5em; font-weight: normal; margin-top: 0.3em; color: #888;">酷丁</small></h1>
@@ -97,7 +97,7 @@
         </div>
 
 
-        <div class="info-area-div">
+        <div class="info-area-div scroll-hidden">
             <div class="info-div">
                 <div class="info-box-div">
                     <h3>正在折腾</h3>
@@ -145,55 +145,7 @@
         </div>
     </div>
 
-    <script>
-        // 只保留横幅提示，去掉弹窗
-        function checkAndShowAnnouncement() {
-            const referrer = document.referrer || '';
-            const currentHost = window.location.hostname;
-            const urlParams = new URLSearchParams(window.location.search);
-            const isFromParam = urlParams.get('from') === 'coldin.top';
-
-            const isOldDomain = currentHost === 'coldin.top' || currentHost === 'www.coldin.top';
-            const fromColdintop = referrer.includes('coldin.top') || isOldDomain || isFromParam;
-
-            const banner = document.getElementById('announcement-banner');
-            const closeBanner = document.getElementById('close-banner');
-
-            const COUNT_KEY = 'announcement-close-count';
-            const MAX_COUNT = 5;
-
-            if (fromColdintop) {
-                localStorage.setItem(COUNT_KEY, '0');
-            }
-
-            let closeCount = parseInt(localStorage.getItem(COUNT_KEY) || '0', 10);
-            const shouldShow = fromColdintop || closeCount < MAX_COUNT;
-
-            if (shouldShow && banner) {
-                banner.style.display = 'flex';
-            }
-
-            const incrementCount = () => {
-                if (!fromColdintop) {
-                    closeCount += 1;
-                    localStorage.setItem(COUNT_KEY, closeCount.toString());
-                }
-            };
-
-            if (closeBanner) {
-                closeBanner.addEventListener('click', () => {
-                    banner.style.display = 'none';
-                    incrementCount();
-                });
-            }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', checkAndShowAnnouncement);
-        } else {
-            checkAndShowAnnouncement();
-        }
-    </script>
+    <script src="src/script.js"></script>
 </body>
 
 </html>
