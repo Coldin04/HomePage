@@ -43,30 +43,7 @@ function checkAndShowAnnouncement() {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         checkAndShowAnnouncement();
-        initScrollAnimations();
     });
 } else {
     checkAndShowAnnouncement();
-    initScrollAnimations();
-}
-
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('scroll-visible');
-            } else {
-                // 离开视口时移除类，这样下次回来可以再次触发动画
-                entry.target.classList.remove('scroll-visible');
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.scroll-hidden').forEach((el) => {
-        observer.observe(el);
-    });
 }
