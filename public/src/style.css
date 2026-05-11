@@ -130,6 +130,53 @@ body {
     margin-block: 0.9rem;
 }
 
+.page-header {
+    width: min(100%, var(--profile-content-width));
+    margin-inline: auto;
+    padding: 5rem 0 2.25rem;
+    text-align: center;
+}
+
+.page-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 1.6rem;
+    color: var(--text-tertiary-color);
+    font-size: 0.95rem;
+}
+
+.page-back-link:hover,
+.page-back-link:active,
+.page-back-link:focus {
+    border-bottom: none;
+}
+
+.page-title {
+    margin: 0;
+    color: #7dd3fc;
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    line-height: 1.1;
+}
+
+.page-content {
+    padding-left: 0;
+}
+
+.page-content code {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    background: var(--button-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.12rem 0.38rem;
+    font-family: "Fira Mono", Consolas, Menlo, monospace;
+    font-size: 0.95em;
+}
+
 .list-container {
     display: flex;
     flex-direction: column;
