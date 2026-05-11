@@ -57,8 +57,6 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: Arial, sans-serif;
-    justify-content: center;
-    align-items: center;
     margin: 0;
 }
 .main-div {
@@ -90,6 +88,15 @@ body {
     box-shadow: 0 0 20px var(--avatar-glow-color);
     animation: breathing-glow 5s infinite ease-in-out;
     flex-shrink: 0;
+}
+
+@keyframes breathing-glow {
+    0%, 100% {
+        box-shadow: 0 0 14px var(--avatar-glow-color);
+    }
+    50% {
+        box-shadow: 0 0 24px var(--avatar-glow-color);
+    }
 }
 
 .ava-name {
