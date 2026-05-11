@@ -33,7 +33,7 @@ canonical: https://cold04.com/
 
 ### 如何验证身份
 
-某些必要情况下，存在有身份仿冒的可能，可以通过如下方式获取身份信任：
+当需要时，请务必通过以下方式验证身份：
 
 {% listRow %}
 {% iconLink "fa-regular fa-user", "PGP", "/pgp/" %}
