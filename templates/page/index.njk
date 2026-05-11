@@ -1,0 +1,15 @@
+---
+layout: shared/base.njk
+---
+<div class="main-div">
+    <header class="page-header">
+        <a href="/" class="page-back-link"><i class="fa-solid fa-arrow-left"></i> 返回首页</a>
+        <h1 class="page-title">{{ heading | default(title) }}</h1>
+    </header>
+
+    <main class="info-text page-content">
+        {{ content | safe }}
+    </main>
+
+    {% include "shared/footer.njk" %}
+</div>

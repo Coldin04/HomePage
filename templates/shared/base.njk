@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default('zh-hans') }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ description }}">
+{% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+<meta name="author" content="Coldin04">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#fafafa">
+<meta name="application-name" content="Coldin04 的主页">
+{% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+{% if homePage %}
+<meta property="og:site_name" content="Coldin04 的主页">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coldin04 (酷丁同学) - 有想法的计算机萌新">
+<meta property="og:description" content="Coldin04 （酷丁同学）的个人主页，一 萌新开发者分享项目、技术笔记和博客文章的地方，欢迎大佬指导。">
+<meta property="og:url" content="https://cold04.com/">
+<meta property="og:image" content="https://cold04.com/src/coldin04-og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Coldin04（酷丁）的主页">
+<meta property="og:locale" content="zh_CN">
+<meta name="baidu-site-verification" content="codeva-r9V5E5cvfQ">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coldin04（酷丁同学） - 有想法的计算机萌新">
+<meta name="twitter:description" content="Coldin04 （酷丁同学）的个人主页，一 萌新开发者分享项目、技术笔记和博客文章的地方，欢迎大佬指导">
+<meta name="twitter:image" content="https://cold04.com/src/coldin04-og.webp">
+<meta name="twitter:image:alt" content="Coldin04（酷丁同学）的主页">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://cold04.com/#person",
+    "name": "Coldin04",
+    "alternateName": ["酷丁", "coldin04"],
+    "url": "https://cold04.com/",
+    "image": "https://cold04.com/src/avatar.webp",
+    "jobTitle": "Developer",
+    "description": "Coldin04（酷丁同学）是一位萌新开发者，分享技术项目、编程笔记和博客文章。想法很多，有时爱从产品设计角度思考。",
+    "sameAs": [
+        "https://github.com/coldin04",
+        "https://blog.cold04.com",
+        "https://note.cold04.com",
+        "https://space.bilibili.com/356490973"
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Coldin04 的主页",
+    "alternateName": ["酷丁的主页", "Coldin04 homepage"],
+    "url": "https://cold04.com/",
+    "inLanguage": "zh-CN",
+    "author": {
+        "@id": "https://cold04.com/#person"
+    },
+    "description": "Coldin04（酷丁同学）的主页。萌新开发者，想法很多，有时爱从产品设计角度思考。",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.google.com/search?q=Coldin04+{search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+{% endif %}
+<title>{{ title }}</title>
+<link rel="icon" type="image/svg+xml" href="/src/favicon.svg">
+<link rel="shortcut icon" type="image/x-icon" href="/src/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+{{ content | safe }}
+</body>
+</html>

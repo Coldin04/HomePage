@@ -1,0 +1,21 @@
+---
+layout: shared/base.njk
+---
+<div class="main-div">
+    <div class="avatar-area-div">
+        <img src="/src/avatar_240.webp"
+             srcset="/src/avatar_240.webp 1x, /src/avatar_480.webp 2x"
+             alt="Coldin04 / 酷丁"
+             class="ava-img-round"
+             width="240"
+             height="240"
+             loading="lazy">
+        <h1 class="ava-name"><span class="gradient-text">Coldin04</span> <span class="subtext">酷丁</span></h1>
+    </div>
+
+    <div class="info-text">
+        {{ content | safe }}
+    </div>
+
+    {% include "shared/footer.njk" %}
+</div>

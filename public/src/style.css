@@ -1,0 +1,323 @@
+:root {
+    /* 浅色主题 - 默认 */
+    --bg-color: #fafafa;
+    --text-color: #333;
+    --text-muted-color: #888;
+    --text-tertiary-color: #6c757d;
+    --link-color: #8baaf0;
+    --link-hover-color: #78b2ec;
+    --link-active-color: #2d527a;
+    --button-bg-color: #f0f0f0;
+    --button-bg-hover-color: #e9e9e9;
+    --border-color: #ddd;
+    --avatar-border-color: #8baaf0;
+    --avatar-glow-color: #8baaf0;
+    
+    /* 强调色 */
+    --accent-warm-start: #f8961e;
+    --accent-warm-end: #ff6b6b;
+    --accent-cyan: #a2d9f5;
+    
+    /* 渐变和阴影 */
+    --gradient-primary: linear-gradient(90deg, #7c9df2 0%, #8fc4ff 45%, #bfeeff 100%);
+    --shadow-text: rgba(0, 0, 0, 0.1);
+    --shadow-primary: rgba(139, 170, 240, 0.4);
+    --shadow-warm: rgba(255, 107, 107, 0.3);
+    --profile-content-width: 44rem;
+    --page-gutter: clamp(1.25rem, 7vw, 5rem);
+}
+
+/* --- Dark Theme via Media Query --- */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light-mode) {
+        --bg-color: #1a1a1a;
+        --text-color: #f0f0f0;
+        --text-muted-color: #a0a0a0;
+        --text-tertiary-color: #808080;
+        --link-color: #5dade2;
+        --link-hover-color: #85c1e2;
+        --link-active-color: #3498db;
+        --button-bg-color: #2c2c2c;
+        --button-bg-hover-color: #3a3a3a;
+        --border-color: #444;
+        --avatar-border-color: #3498db;
+        --avatar-glow-color: rgba(52, 152, 219, 0.5);
+    }
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+.main-div {
+    overflow: auto;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-inline: var(--page-gutter);
+    box-sizing: border-box;
+}
+
+.avatar-area-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+    gap: 1rem;
+    width: min(100%, var(--profile-content-width));
+    margin-inline: auto;
+    padding: 6rem 0rem 2rem 0rem;
+    flex-wrap: wrap;
+}
+
+.avatar-area-div .ava-img-round {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--avatar-border-color);
+    box-shadow: 0 0 20px var(--avatar-glow-color);
+    animation: breathing-glow 5s infinite ease-in-out;
+    flex-shrink: 0;
+}
+
+@keyframes breathing-glow {
+    0%, 100% {
+        box-shadow: 0 0 14px var(--avatar-glow-color);
+    }
+    50% {
+        box-shadow: 0 0 24px var(--avatar-glow-color);
+    }
+}
+
+.ava-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+.ava-name .gradient-text {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 100% 100%;
+    font-size: clamp(2.45rem, 6.6vw, 3.2rem);
+    line-height: 1;
+    font-weight: 600;
+}
+.ava-name .subtext {
+    font-size: 1.65rem;
+    line-height: 1.05;
+    color: var(--text-muted-color);
+    margin: 0.2rem;
+}
+
+.info-text {
+    text-align: left;
+    width: min(100%, var(--profile-content-width));
+    margin: 0 auto 2rem auto; /* 水平居中，底部留点空间 */
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.info-text p {
+    line-height: 1.75;
+    margin-block: 0.9rem;
+}
+
+.page-header {
+    width: min(100%, var(--profile-content-width));
+    margin-inline: auto;
+    padding: 5rem 0 2.25rem;
+    text-align: center;
+}
+
+.page-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 1.6rem;
+    color: var(--text-tertiary-color);
+    font-size: 0.95rem;
+}
+
+.page-back-link:hover,
+.page-back-link:active,
+.page-back-link:focus {
+    border-bottom: none;
+}
+
+.page-title {
+    margin: 0;
+    color: #7dd3fc;
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    line-height: 1.1;
+}
+
+.page-content {
+    padding-left: 0;
+}
+
+.page-content code {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    background: var(--button-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.12rem 0.38rem;
+    font-family: "Fira Mono", Consolas, Menlo, monospace;
+    font-size: 0.95em;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 缩小行间距 */
+    margin-bottom: 1.2rem;
+}
+
+.list-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem; /* 缩小项间距 */
+    align-items: center;
+}
+
+.list-row a {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* 专门处理 Cyime 后紧跟的 GitHub 图标 */
+.list-row a.icon-only-link {
+    margin-left: -0.8rem; /* 负边距让图标更靠近名称 */
+}
+
+.list-row a i {
+    width: 1.1rem;
+    text-align: center;
+    margin-right: 0.3rem;
+}
+
+/* 针对 icon-only-link 移除多余边距 */
+.list-row a.icon-only-link i {
+    margin-right: 0;
+}
+
+.hero-tagline {
+    max-width: 44rem;
+    padding-inline: 1rem;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.65;
+}
+
+.hero-tagline span {
+    display: block;
+}
+
+.hero-tagline span + span {
+    margin-top: 0.2rem;
+}
+
+
+a {
+    color: var(--link-color);
+    text-decoration: none; /* 去掉原有的下划线 */
+}
+a:hover {
+    color: var(--link-hover-color); /* 鼠标悬停时的颜色 */
+    text-decoration: none; /* 鼠标悬停时不显示下划线 */
+    border-bottom: 2px solid var(--link-color); /* 鼠标悬停时的下划线颜色 */
+}
+a:active {
+    color: var(--link-active-color); /* 鼠标点击时的颜色 */
+    border-bottom: 2px solid var(--link-active-color); /* 鼠标点击时的下划线颜色 */
+}
+
+ul li {
+    margin-top: 0.8em; /* 调整这个值来改变空行的大小 */
+}
+ul {
+    padding-left: 0em; /* 调整这个值来改变列表项的缩进 */
+    list-style: none;
+}
+
+.footer-div {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--text-tertiary-color);
+    padding: 5vh;
+}
+.footer-div a {
+    color: var(--text-tertiary-color);
+    text-decoration: none;
+}
+.footer-div a:hover,
+.footer-div a:active,
+.footer-div a:focus {
+    text-decoration: none;
+    border-bottom: none;
+}
+.footer-div p {
+    margin-block: 0.5em;
+}
+
+@media (max-width: 480px) {
+    .avatar-area-div {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 0rem 1rem 0rem;
+    }
+    .ava-img-round {
+        width: 80px;
+        height: 80px;
+    }
+    .ava-name {
+        margin: 0;
+        align-items: center;
+    }
+    .hero-tagline {
+        max-width: 100%;
+        padding-inline: 1rem;
+    }
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-warm-start) 0%, var(--accent-warm-end) 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-warm);
+}
+
+.btn-secondary {
+    background: var(--button-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--button-bg-hover-color);
+}
