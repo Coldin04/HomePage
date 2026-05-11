@@ -23,6 +23,8 @@
     --shadow-text: rgba(0, 0, 0, 0.1);
     --shadow-primary: rgba(139, 170, 240, 0.4);
     --shadow-warm: rgba(255, 107, 107, 0.3);
+    --profile-content-width: 44rem;
+    --page-gutter: clamp(1.25rem, 7vw, 5rem);
 }
 
 /* --- Dark Theme via Media Query --- */
@@ -63,8 +65,8 @@ body {
     overflow: auto;
     max-width: 960px;
     margin: 0 auto;
-    /* 左右边界空余保护*/
-    padding: 0 4rem;
+    padding-inline: var(--page-gutter);
+    box-sizing: border-box;
 }
 
 .avatar-area-div {
@@ -74,6 +76,8 @@ body {
     text-align: center;
     justify-content: left;
     gap: 1rem;
+    width: min(100%, var(--profile-content-width));
+    margin-inline: auto;
     padding: 6rem 0rem 2rem 0rem;
     flex-wrap: wrap;
 }
@@ -115,9 +119,51 @@ body {
 
 .info-text {
     text-align: left;
+    width: min(100%, var(--profile-content-width));
     margin: 0 auto 2rem auto; /* 水平居中，底部留点空间 */
     padding-left: 5px;
+    box-sizing: border-box;
+}
 
+.info-text p {
+    line-height: 1.75;
+    margin-block: 0.9rem;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 缩小行间距 */
+    margin-bottom: 1.2rem;
+}
+
+.list-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem; /* 缩小项间距 */
+    align-items: center;
+}
+
+.list-row a {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* 专门处理 Cyime 后紧跟的 GitHub 图标 */
+.list-row a.icon-only-link {
+    margin-left: -0.8rem; /* 负边距让图标更靠近名称 */
+}
+
+.list-row a i {
+    width: 1.1rem;
+    text-align: center;
+    margin-right: 0.3rem;
+}
+
+/* 针对 icon-only-link 移除多余边距 */
+.list-row a.icon-only-link i {
+    margin-right: 0;
 }
 
 .hero-tagline {
@@ -181,7 +227,7 @@ ul {
     margin-block: 0.5em;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .avatar-area-div {
         flex-direction: column;
         text-align: center;
@@ -199,71 +245,6 @@ ul {
         max-width: 100%;
         padding-inline: 1rem;
     }
-}
-
-
-
-
-
-
-
-/* ============ 公告样式 ============ */
-
-/* 公告横幅 */
-.announcement-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--gradient-primary);
-    color: var(--text-color);
-    padding: 1rem;
-    z-index: 998;
-    box-shadow: 0 4px 15px var(--shadow-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px);
-}
-
-.announcement-content {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.95rem;
-    max-width: 900px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.announcement-content i {
-    font-size: 1.2rem;
-    flex-shrink: 0;
-}
-
-.announcement-content span {
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.close-btn:hover {
-    opacity: 1;
 }
 
 .btn-primary {
