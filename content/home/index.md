@@ -16,7 +16,9 @@ canonical: https://cold04.com/
 
 {% listRow %}
 {% iconLink "fa-regular fa-lemon", "Cyime", "https://w.co1d.in" %}
-{% iconLink "fab fa-github", "", "https://github.com/Coldin04/CyimeWrite", "icon-only-link" %}
+{% iconLink "fab fa-github", "", "https://github.com/Coldin04/Cyime", "icon-only-link" %}
+{% iconLink "fa-brands fa-google-scholar", "芜忧皖江", "https://uwh.cold04.com/" %}
+{% iconLink "fab fa-github", "", "https://github.com/Coldin04/uwhLife", "icon-only-link" %}
 {% iconLink "fa-solid fa-book", "笔记", "https://note.cold04.com" %}
 {% iconLink "fa-solid fa-blog", "博客", "https://blog.cold04.com" %}
 {% iconLink "fab fa-github", "Github", "https://github.com/coldin04" %}
@@ -28,7 +30,7 @@ canonical: https://cold04.com/
 {% iconLink "fab fa-bilibili", "Bilibili", "https://space.bilibili.com/356490973" %}
 {% iconLink "fa-brands fa-telegram", "Telegram", "https://t.me/blog_0i7" %}
 {% iconLink "fa-brands fa-x-twitter", "Twitter", "https://x.com/coldin04" %}
-{% iconLink "fa-solid fa-link", "友情链接", "https://blog.cold04.com/links" %}
+{% iconLink "fa-solid fa-link", "友情链接", "/friends/" %}
 {% endlistRow %}
 
 ### 如何验证身份

@@ -1,0 +1,51 @@
+---
+layout: shared/base.njk
+---
+<div class="main-div">
+    <header class="page-header">
+        <a href="/" class="page-back-link"><i class="fa-solid fa-arrow-left"></i> 返回首页</a>
+        <h1 class="page-title">{{ heading | default(title) }}</h1>
+    </header>
+
+    <main class="info-text page-content friends-page">
+        <section class="friends-apply" aria-label="申请友链">
+            {{ content | safe }}
+        </section>
+
+        <section class="friends-grid" aria-label="友情链接">
+            {% for friend in friends %}
+                <article class="friend-card{% if not friend.website %} friend-card-unavailable{% endif %}">
+                {% if friend.website %}
+                    <a class="friend-card-link" href="{{ friend.website }}" target="_blank" rel="noopener noreferrer">
+                {% else %}
+                    <div class="friend-card-link">
+                {% endif %}
+                        <span class="friend-avatar">
+                            {% if friend.image %}
+                                <img src="{{ friend.image }}" alt="" loading="lazy">
+                                <span class="friend-avatar-fallback" aria-hidden="true"><i class="fa-solid fa-image"></i></span>
+                            {% else %}
+                                <span class="friend-avatar-fallback friend-avatar-unavailable" aria-hidden="true"><i class="fa-solid fa-link-slash"></i></span>
+                            {% endif %}
+                        </span>
+                        <span class="friend-details">
+                            <span class="friend-name">{{ friend.title }}</span>
+                            <span class="friend-description" id="friend-description-{{ loop.index }}">{{ friend.description }}</span>
+                        </span>
+                {% if friend.website %}
+                    </a>
+                {% else %}
+                    </div>
+                {% endif %}
+                    <button class="friend-description-tooltip-toggle" type="button" aria-controls="friend-description-popover-{{ loop.index }}" aria-expanded="false" aria-label="查看 {{ friend.title }} 的完整简介" title="查看完整简介" hidden>
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <span class="friend-description-popover" id="friend-description-popover-{{ loop.index }}" role="tooltip">{{ friend.description }}</span>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+
+    {% include "shared/footer.njk" %}
+</div>
+<script src="/src/friends.js"></script>
