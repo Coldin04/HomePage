@@ -28,7 +28,7 @@ canonical: https://cold04.com/
 
 {% listRow %}
 {% iconLink "fab fa-bilibili", "Bilibili", "https://space.bilibili.com/356490973" %}
-{% iconLink "fa-brands fa-telegram", "Telegram", "https://t.me/blog_0i7" %}
+{% iconLink "fa-brands fa-telegram", "Telegram", "https://telegram.me/blog_0i7" %}
 {% iconLink "fa-brands fa-x-twitter", "Twitter", "https://x.com/coldin04" %}
 {% iconLink "fa-solid fa-link", "友情链接", "/friends/" %}
 {% endlistRow %}
