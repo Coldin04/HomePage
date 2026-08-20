@@ -4,18 +4,18 @@
     <loc>https://cold04.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </url>
   <url>
     <loc>https://cold04.com/pgp/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-05-11</lastmod>
   </url>
   <url>
     <loc>https://cold04.com/friends/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
   </url>
 </urlset>

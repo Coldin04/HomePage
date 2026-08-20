@@ -4,6 +4,7 @@ permalink: /pgp/index.html
 title: 酷丁的PGP
 heading: 关于 PGP
 description: PGP关于页面
+canonical: https://cold04.com/pgp/
 ---
 
 PGP 请作为对身份的一种辅助验证手段，请不要过于相信而忽略其他异常因素。
