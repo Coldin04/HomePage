@@ -144,5 +144,11 @@
     "description": "舟遥遥以轻飏，风飘飘而吹衣。",
     "website": "https://aiccrop.com/",
     "image": "https://aiccrop.com/api/head/"
+  },
+  {
+    "title": "for_the_zero的小站",
+    "description": "想要成为一个有趣的、厉害的、快乐的、善良的、……能被你记住的人",
+    "website": "https://ftz.is-a.dev/",
+    "image": "https://ftz.is-a.dev/assets/intro/avatar.png"
   }
 ]
