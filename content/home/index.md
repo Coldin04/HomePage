@@ -17,6 +17,8 @@ canonical: https://cold04.com/
 {% listRow %}
 {% iconLink "fa-regular fa-lemon", "Cyime", "https://w.co1d.in" %}
 {% iconLink "fab fa-github", "", "https://github.com/Coldin04/Cyime", "icon-only-link" %}
+{% iconLink "fab fa-github", "Pico Manager", "https://github.com/Coldin04/Pico_Manager" %}
+{% iconLink "fab fa-github", "InkReaderLink", "https://github.com/Coldin04/InkReaderLink" %}
 {% iconLink "fa-brands fa-google-scholar", "芜忧芜院", "https://uwh.cold04.com/" %}
 {% iconLink "fab fa-github", "", "https://github.com/Coldin04/uwhLife", "icon-only-link" %}
 {% iconLink "fa-solid fa-book", "笔记", "https://note.cold04.com" %}
