@@ -28,7 +28,7 @@ Cyime是一个基于Web的在线Markdown编辑器，支持实时预览、导出P
 JustRead 是一个适配了 esp32-s3 墨水屏设备，与他人共同完成。支持例如 [Read Pico](https://dot.mindreset.tech/docs/read_pico) 设备阅读器固件，其特性是提供快速翻页刷新和简介好用的用户界面。支持多种电子书格式，并提供个性化的阅读设置，如字体大小、行间距、主题颜色等。JustRead 旨在为用户提供快速、舒适的阅读体验。
 
 {% listRow %}
-{% iconLink "fab fa-github", "JustRead", "https://github.com/JustRead", "icon-only-link" %}
+{% iconLink "fab fa-github", "JustRead", "https://github.com/Justread-Team/", "icon-only-link" %}
 {% endlistRow %}
 
 ### InkReaderLink
