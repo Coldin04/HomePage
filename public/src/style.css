@@ -139,8 +139,22 @@ body {
 }
 
 .info-text p {
-    line-height: 1.75;
-    margin-block: 0.9rem;
+    line-height: 1.8;
+    margin-block: 0.65rem;
+}
+
+.info-text h2 {
+    margin: 2.35rem 0 0.5rem;
+    line-height: 1.35;
+}
+
+.info-text h3 {
+    margin: 1.35rem 0 0.4rem;
+    line-height: 1.4;
+}
+
+.info-text h2 + h3 {
+    margin-top: 0.35rem;
 }
 
 .page-header {
@@ -384,8 +398,16 @@ a.friend-card-link:active {
 .list-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.2rem; /* 缩小项间距 */
+    gap: 1.5rem;
     align-items: center;
+}
+
+.list-row > p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0;
 }
 
 .list-row a {
@@ -396,7 +418,7 @@ a.friend-card-link:active {
 
 /* 专门处理 Cyime 后紧跟的 GitHub 图标 */
 .list-row a.icon-only-link {
-    margin-left: -0.8rem; /* 负边距让图标更靠近名称 */
+    margin-left: -0.5rem;
 }
 
 .list-row a i {
