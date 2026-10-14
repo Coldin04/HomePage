@@ -156,5 +156,11 @@
     "description": "Hanako 的小自留地～",
     "website": "https://hanako.me/",
     "image": "https://hanako.me/assets/hanako/portrait.jpg"
+  },
+  {
+    "title": "Totoro Blog",
+    "description": "偷偷肉的部落格",
+    "website": "https://yyw.moe/",
+    "image": "https://yyw.moe/img/avatar.png"
   }
 ]
