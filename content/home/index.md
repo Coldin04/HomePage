@@ -42,7 +42,8 @@ InkReaderLink 是面向电子墨水阅读设备及兼容固件的设备桥接层
 
 Pico Manager 是一个基于 InkReaderLink 的 Read Pico 设备管理工具，提供图形化界面，方便用户管理 Read Pico 设备的文件、设置和阅读进度等信息。它支持多种操作系统，并提供简洁易用的用户体验。
 
-{% iconLink "fab fa-github", "Pico_Manager", "https://github.com/Coldin04/Pico_Manager", "icon-only-link" %}
+{% iconLink "fab fa-github", "Pico Manager", "https://github.com/Coldin04/Pico_Manager", "icon-only-link" %}
+{% iconLink "fa-solid fa-link", "下载", "https://pico.cold04.com" %}
 
 ## 其他记录站点:
 
