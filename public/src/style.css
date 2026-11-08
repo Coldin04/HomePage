@@ -416,11 +416,6 @@ a.friend-card-link:active {
     white-space: nowrap;
 }
 
-/* 仅缩短紧跟其他链接的纯图标链接间距
-无意义，已经废弃
-.list-row a:not(:first-child).icon-only-link {
-    margin-left: -0.5rem;
-} */
 
 .list-row a i {
     width: 1.1rem;
