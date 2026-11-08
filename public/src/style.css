@@ -416,8 +416,8 @@ a.friend-card-link:active {
     white-space: nowrap;
 }
 
-/* 专门处理 Cyime 后紧跟的 GitHub 图标 */
-.list-row a.icon-only-link {
+/* 仅缩短紧跟其他链接的纯图标链接间距 */
+.list-row a:not(:first-child).icon-only-link {
     margin-left: -0.5rem;
 }
 
@@ -474,7 +474,8 @@ ul {
 
 .footer-div {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 32px;
+    margin-bottom: 32px;
     font-size: 0.75rem;
     color: var(--text-tertiary-color);
 }

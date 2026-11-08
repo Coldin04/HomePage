@@ -62,7 +62,8 @@ body {
 
 .footer-div {
     text-align: start;
-    margin-top: 2rem;
+    margin-top: 32px;
+    margin-bottom: 32px;
     margin-left: 1.9rem;
     font-size: 0.75rem;
     color: #6c757d;
