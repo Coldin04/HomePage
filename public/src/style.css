@@ -553,22 +553,6 @@ ul {
     white-space: nowrap;
 }
 
-.skip-link {
-    position: fixed;
-    inset: 1rem auto auto 1rem;
-    z-index: 10;
-    padding: 0.75rem 1rem;
-    background: var(--card-bg-color);
-    border: 2px solid currentColor;
-}
-
-.skip-link:not(:focus) {
-    clip-path: inset(50%);
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
 @media (prefers-reduced-motion: no-preference) {
     .friend-card {
         transition: transform 160ms ease, background-color 160ms ease;
