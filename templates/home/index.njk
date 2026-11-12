@@ -2,20 +2,20 @@
 layout: shared/base.njk
 ---
 <div class="main-div">
-    <div class="avatar-area-div">
+    <header class="avatar-area-div">
         <img src="/src/avatar_240.webp"
              srcset="/src/avatar_240.webp 1x, /src/avatar_480.webp 2x"
              alt="Coldin04 / 酷丁"
              class="ava-img-round"
              width="240"
              height="240"
-             loading="lazy">
+             fetchpriority="high">
         <h1 class="ava-name"><span class="gradient-text">Coldin04</span> <span class="subtext">酷丁</span></h1>
-    </div>
+    </header>
 
-    <div class="info-text">
+    <main class="info-text" id="main-content" tabindex="-1">
         {{ content | safe }}
-    </div>
+    </main>
 
     {% include "shared/footer.njk" %}
 </div>

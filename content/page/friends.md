@@ -13,9 +13,8 @@ canonical: https://cold04.com/friends/
 
 本站信息：
 
-```text
-站点名称: 酷丁的主页
+<pre tabindex="0" role="region" aria-label="本站友链信息"><code class="language-text">站点名称: 酷丁的主页
 简介：计算机小萌新，请多包涵~
 链接：https://cold04.com
 图片：https://cold04.com/avatar.webp
-```
+</code></pre>
